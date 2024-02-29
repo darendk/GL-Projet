@@ -1,0 +1,50 @@
+Table Admin {
+  id_admin integer,
+  nom_admin varchar,
+  numero_admin integer,
+  email_admin varchar,
+  adresse_admin varchar
+}
+
+Table Planteur {
+  id_planteur integer primary key,
+  nom_planteur varchar primary key,
+  numero_planteur integer primary key,
+  adresse_planteur varchar primary key,
+  nom_produit varchar primary key,
+  quantite interger
+}
+
+Table client {
+  id_client integer primary key,
+  nom_client varchar primary key,
+  numero_client interger primary key,
+  adresse_client varchar primary key,
+  email_client varchar
+}
+
+Table Commande {
+  id_commande integer,
+  id_client interger,
+  nom_client varchar,
+  adresse_client varchar,
+  numero_client interger,
+  nom_produit varchar,
+  quantite_commande integer,
+  id_planteur integer,
+  nom_planteur varchar,
+  adresse_planteur varchar,
+  numero_planteur integer,
+
+Foreign key (id_planteur) Reference planter(id_planteur),
+Foreign key (nom_planteur) Reference planter(nom_planteur),
+Foreign key (numero_planteur) Reference planter(numero_planteur),
+Foreign key (adresse_planteur) Reference planter(adresse_planteur),
+Foreign key (nom_produit) Reference planter(nom_produit),
+
+Foreign key (id_client) Reference client(id_client),
+Foreign key (nom_client) Reference client(nom_client),
+Foreign key (numero_client) Reference client(num_client),
+Foreign key (adresse_client) Reference client(addresse_client)
+}
+
